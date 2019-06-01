@@ -29,14 +29,10 @@ public class SearchController {
         ArrayList<HashMap<String, String>> jobs;
         if (searchType.equals("all")) {
             jobs = JobData.findByValue(searchTerm);
-            model.addAttribute("listItems", jobs);
-            model.addAttribute("columns", ListController.columnChoices);
         }
 
         else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
-            model.addAttribute("listItems", jobs);
-            model.addAttribute("columns", ListController.columnChoices);
         }
 
         model.addAttribute("columns", ListController.columnChoices);
